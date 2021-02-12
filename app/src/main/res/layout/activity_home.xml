@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomeActivity">
+
+    <Button
+        android:id="@+id/btnOutlite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Outlite" />
+
+    <Button
+        android:id="@+id/btnProduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Product" />
+
+    <Button
+        android:id="@+id/btnProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Profile" />
+
+    <Button
+        android:id="@+id/btnTransaction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Transaction" />
+
+    <Button
+        android:id="@+id/btnReport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Report" />
+</LinearLayout>
