@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="id.itborneo.laundrymanage">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -11,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LaundryManage"
         android:usesCleartextTraffic="true">
+        <activity android:name=".packet.PacketAddUpdateActivity"></activity>
         <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,14 +23,12 @@
         <activity android:name=".ReportActivity" />
         <activity android:name=".TransactionActivity" />
         <activity android:name=".UserManageActivity" />
-        <activity android:name=".ProductActivity" />
+        <activity android:name=".packet.PacketActivity" />
         <activity android:name=".outlite.OutliteActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

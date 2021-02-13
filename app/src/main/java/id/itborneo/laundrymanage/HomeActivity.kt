@@ -4,7 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import id.itborneo.laundrymanage.outlite.OutliteActivity
+import id.itborneo.laundrymanage.packet.PacketActivity
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.partial_home_packet_and_customer.*
+import kotlinx.android.synthetic.main.partial_home_transaction_and_report.*
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,12 +23,12 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
         btnProduct.setOnClickListener {
-            val intent = Intent(this, ProductActivity::class.java)
+            val intent = Intent(this, PacketActivity::class.java)
             startActivity(intent)
         }
 
-        btnProfile.setOnClickListener {
-            val intent = Intent(this, ProfileActivity::class.java)
+        btnUserManage.setOnClickListener {
+            val intent = Intent(this, UserManageActivity::class.java)
             startActivity(intent)
         }
 

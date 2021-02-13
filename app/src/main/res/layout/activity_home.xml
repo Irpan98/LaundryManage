@@ -3,36 +3,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F0F0F0"
     android:orientation="vertical"
     tools:context=".HomeActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello User" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Irpan" />
+
+
+    <include layout="@layout/partial_home_transaction_and_report" />
+
+    <include layout="@layout/partial_home_packet_and_customer" />
 
     <Button
         android:id="@+id/btnOutlite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Outlite" />
+        android:text="Outlite"
+        android:visibility="gone" />
 
-    <Button
-        android:id="@+id/btnProduct"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Product" />
 
-    <Button
-        android:id="@+id/btnProfile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Profile" />
-
-    <Button
-        android:id="@+id/btnTransaction"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Transaction" />
-
-    <Button
-        android:id="@+id/btnReport"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Report" />
 </LinearLayout>
