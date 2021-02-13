@@ -8,4 +8,6 @@ class ReportActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_report)
     }
+
+
 }

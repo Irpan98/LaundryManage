@@ -4,6 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TransactionActivity">
+    tools:context=".transaction.TransactionActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTransaction"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_transaction" />
+
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="14dp"
+        android:backgroundTint="@android:color/white"
+        android:text="Tambah Transaksi"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary"
+        app:icon="@drawable/ic_add"
+        app:iconTint="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

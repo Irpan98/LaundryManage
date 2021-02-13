@@ -10,5 +10,7 @@ interface ApiServices {
     @GET("getOutlet.php")
     fun getOutline(): Call<OutliteResponse>
 
+    @GET("getOutlet.php")
+    fun getPacket(): Call<OutliteResponse>
 
 }

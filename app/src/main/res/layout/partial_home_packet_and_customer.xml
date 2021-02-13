@@ -27,11 +27,12 @@
             android:paddingVertical="12dp">
 
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:padding="10dp"
                 android:layout_height="80dp"
                 android:clickable="false"
                 android:focusable="false"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/ic_packet" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -39,8 +40,8 @@
                 android:layout_marginTop="6dp"
                 android:clickable="false"
                 android:gravity="center"
-                android:text="Product"
-                android:textColor="#3D2A53"
+                android:text="Paket"
+                android:textColor="@color/textColor"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -69,11 +70,11 @@
             android:paddingVertical="12dp">
 
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:clickable="false"
                 android:focusable="false"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/ic_admin" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -81,8 +82,8 @@
                 android:layout_marginTop="6dp"
                 android:clickable="false"
                 android:gravity="center"
-                android:text="User Manage"
-                android:textColor="#3D2A53"
+                android:text="Admin"
+                android:textColor="@color/textColor"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>

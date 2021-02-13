@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="4dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvIdTransaction"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/textColor"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="1237723" />
+
+        <TextView
+            android:id="@+id/tvProgressStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:paddingTop="4dp"
+            android:textColor="@color/textColorAccent"
+            android:textStyle="bold"
+            tools:text="Proses" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvCustomerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:textColor="@color/textColor"
+        android:textSize="16sp"
+        tools:text="Irpan aja" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvTotalPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            tools:text="Rp 300.0000" />
+
+        <TextView
+            android:id="@+id/tvPaymentStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:paddingTop="4dp"
+            tools:text="dibayar" />
+    </LinearLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tvPacket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:paddingTop="4dp"
+        tools:text="paket Kilo" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:background="?android:attr/listDivider" />
+</LinearLayout>

@@ -1,9 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="10dp"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
     tools:context=".packet.PacketAddUpdateActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:paddingBottom="4dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nama Packet"
+        app:startIconDrawable="@drawable/ic_add"
+        app:startIconTint="@color/colorPrimary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="4dp"
+        android:hint="Harga"
+        app:startIconDrawable="@drawable/ic_add"
+        app:startIconTint="@color/colorPrimary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:paddingBottom="4dp"
+        android:layout_height="wrap_content"
+        android:hint="Catatan"
+        app:startIconDrawable="@drawable/ic_add"
+        app:startIconTint="@color/colorPrimary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAddUpdate"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="Tambah Data"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        app:icon="@drawable/ic_add"
+        app:iconTint="@android:color/white" />
+</LinearLayout>

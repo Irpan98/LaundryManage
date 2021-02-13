@@ -7,13 +7,27 @@
     android:orientation="vertical"
     tools:context=".HomeActivity">
 
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hello User" />
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_logo" />
 
     <TextView
+        android:paddingHorizontal="12dp"
+        android:textColor="@color/textColor"
+        android:textSize="20sp"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selamat Datang" />
+
+    <TextView
+        android:paddingBottom="12dp"
+        android:paddingHorizontal="12dp"
+        android:layout_width="match_parent"
+        android:textColor="@color/textColor"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:layout_height="wrap_content"
         android:text="Irpan" />
 
