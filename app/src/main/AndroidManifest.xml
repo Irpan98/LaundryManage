@@ -17,11 +17,9 @@
         <activity android:name=".HomeActivity"></activity>
         <activity android:name=".ReportActivity" />
         <activity android:name=".transaction.TransactionActivity" />
-        <activity android:name=".UserManageActivity" />
+        <activity android:name=".users.UserManageActivity" />
         <activity android:name=".packet.PacketActivity" />
-        <activity android:name=".outlite.OutliteActivity" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".RegisterActivity" />
+
         <activity android:name=".login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +27,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

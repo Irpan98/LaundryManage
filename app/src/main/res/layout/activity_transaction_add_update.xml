@@ -105,7 +105,7 @@
                 android:text="Proses"
                 android:textAllCaps="false" />
 
-            
+
             <Button
                 android:id="@+id/btnProgressDone"
                 style="?attr/materialButtonOutlinedStyle"

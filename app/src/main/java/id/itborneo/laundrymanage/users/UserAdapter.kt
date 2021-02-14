@@ -1,27 +1,27 @@
-package id.itborneo.laundrymanage.outlite
+package id.itborneo.laundrymanage.users
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import id.itborneo.laundrymanage.R
-import kotlinx.android.synthetic.main.item_outlite.view.*
+import kotlinx.android.synthetic.main.item_user.view.*
 
-class OutliteAdapter(val clickListener: (Outlite) -> Unit) :
-    RecyclerView.Adapter<OutliteAdapter.ViewHolder>() {
+class UserAdapter(val clickListener: (UsersModel) -> Unit) :
+    RecyclerView.Adapter<UserAdapter.ViewHolder>() {
 
-    var list = listOf<Outlite>()
-
+    var list = listOf<UsersModel>()
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bind(outlite: Outlite) {
+        fun bind(data: UsersModel) {
             itemView.apply {
-                tvName.text = outlite.nama
-                tvAddress.text = outlite.alamat
+                tvName.text = data.nama
+                tvEmail.text = data.email
+                tvRole.text = data.role
 
                 setOnClickListener {
-                    clickListener(outlite)
+                    clickListener(data)
                 }
 
             }
@@ -31,7 +31,7 @@ class OutliteAdapter(val clickListener: (Outlite) -> Unit) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_outlite, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_user, parent, false)
         return ViewHolder(view)
     }
 

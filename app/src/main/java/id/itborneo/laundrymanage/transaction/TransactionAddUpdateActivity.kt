@@ -257,55 +257,58 @@ class TransactionAddUpdateActivity : AppCompatActivity() {
 
     private fun updateData() {
 
-//        ApiClient.create()
-//            .updatePacket(
-//                data?.id!!,
-//                etName.text.toString(),
-//                etPrice.text.toString().toInt(),
-//                etNote.text.toString()
-//            )
-//            .enqueue(object : Callback<DefaultResponse> {
-//                override fun onResponse(
-//                    call: Call<DefaultResponse>,
-//                    response: Response<DefaultResponse>
-//                ) {
-//                    Toast.makeText(
-//                        this@PacketAddUpdateActivity,
-//                        "Berhasil Update Packet",
-//                        Toast.LENGTH_SHORT
-//                    ).show()
-//                    setResult(RESULT_OK, intent)
-//                    finish()
-//                    Log.d("PacketAddUpdateActivity", "berhasil Update data ")
-//                }
-//
-//                override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
-//                    Log.d("PacketAddUpdateActivity", "gagal Update data")
-//                }
-//            })
+        ApiClient.create()
+            .updateTransaction(
+                data?.id!!,
+                etCustomerName.text.toString(),
+                etQty.text.toString(),
+                progressStatus ?: ProgressStatusEnum.Baru.name,
+                paymentStatus ?: PaymentStatusEnum.Belum_Dibayar.name,
+                (etQty.text.toString().toInt() * price?.toInt()!!).toString(),
+                packetId!!
+            )
+            .enqueue(object : Callback<DefaultResponse> {
+                override fun onResponse(
+                    call: Call<DefaultResponse>,
+                    response: Response<DefaultResponse>
+                ) {
+                    Toast.makeText(
+                        this@TransactionAddUpdateActivity,
+                        "Berhasil Update Packet",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    setResult(RESULT_OK, intent)
+                    finish()
+                    Log.d("TransactionAddUpdate", "berhasil Update data ")
+                }
+
+                override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
+                    Log.d("TransactionAddUpdate", "gagal Update data")
+                }
+            })
     }
 
     private fun deleteData() {
-//        ApiClient.create()
-//            .deletePacket(data?.id!!)
-//            .enqueue(object : Callback<DefaultResponse> {
-//                override fun onResponse(
-//                    call: Call<DefaultResponse>,
-//                    response: Response<DefaultResponse>
-//                ) {
-//                    Toast.makeText(
-//                        this@PacketAddUpdateActivity,
-//                        "Berhasil Hapus Packet",
-//                        Toast.LENGTH_SHORT
-//                    ).show()
-//                    setResult(RESULT_OK, intent)
-//                    finish()
-//                    Log.d("PacketAddUpdateActivity", "berhasil Hapus data ")
-//                }
-//
-//                override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
-//                    Log.d("PacketAddUpdateActivity", "gagal Hapus data")
-//                }
-//            })
+        ApiClient.create()
+            .deleteTransaction(data?.id!!)
+            .enqueue(object : Callback<DefaultResponse> {
+                override fun onResponse(
+                    call: Call<DefaultResponse>,
+                    response: Response<DefaultResponse>
+                ) {
+                    Toast.makeText(
+                        this@TransactionAddUpdateActivity ,
+                        "Berhasil Hapus Packet",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    setResult(RESULT_OK, intent)
+                    finish()
+                    Log.d("PacketAddUpdateActivity", "berhasil Hapus data ")
+                }
+
+                override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
+                    Log.d("PacketAddUpdateActivity", "gagal Hapus data")
+                }
+            })
     }
 }
