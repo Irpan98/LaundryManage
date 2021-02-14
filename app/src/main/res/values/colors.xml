@@ -13,6 +13,7 @@
     <color name="colorPrimaryDark">#254A4A</color>
     <color name="colorAccent">#E91E63</color>
     <color name="colorBackground">#F0F0F0</color>
+    <color name="colorNo">#DA7D7D</color>
 
     <color name="textColor">#144040</color>
     <color name="textColorAccent">#E91E63</color>

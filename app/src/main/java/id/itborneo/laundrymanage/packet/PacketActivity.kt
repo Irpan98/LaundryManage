@@ -2,13 +2,17 @@ package id.itborneo.laundrymanage.packet
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import id.itborneo.laundrymanage.R
-import id.itborneo.laundrymanage.utils.toRupiah
+import id.itborneo.laundrymanage.networks.ApiClient
 import kotlinx.android.synthetic.main.activity_packet.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class PacketActivity : AppCompatActivity() {
@@ -47,42 +51,26 @@ class PacketActivity : AppCompatActivity() {
 
     private fun getData() {
 
-        val dummyData = mutableListOf<PacketModel>()
+        ApiClient.create()
+            .getPacket().enqueue(object : Callback<PacketResponse> {
+                override fun onResponse(
+                    call: Call<PacketResponse>,
+                    response: Response<PacketResponse>
+                ) {
+                    val list = response.body()?.data
+                    if (list != null) {
+                        adapter.list = list as List<PacketModel>
+                        adapter.notifyDataSetChanged()
+                    } else {
+                        Log.d("PacketActivity", "list is null")
+                    }
+                }
 
-        repeat(10) {
-            dummyData.add(
-                PacketModel(
-                    null,
-                    "packet $it",
-                    "40000".toRupiah(),
-                    "catatan ku adasjkdas askdj kasjdkas kjas dkasj dkasj"
-                )
-            )
-        }
+                override fun onFailure(call: Call<PacketResponse>, t: Throwable) {
+                    Log.d("PacketActivity", "getPacket onFailure")
+                }
 
-        adapter.list = dummyData
-        adapter.notifyDataSetChanged()
-
-//        ApiClient.create()
-//            .getPacket().enqueue(object : Callback<OutliteResponse> {
-//                override fun onResponse(
-//                    call: Call<OutliteResponse>,
-//                    response: Response<OutliteResponse>
-//                ) {
-//                    val list = response.body()?.data
-//                    if (list != null) {
-//                        adapter.list = list
-//                        adapter.notifyDataSetChanged()
-//                    } else {
-//                        Log.d("PacketActivity", "list is null")
-//                    }
-//                }
-//
-//                override fun onFailure(call: Call<OutliteResponse>, t: Throwable) {
-//                    Log.d("PacketActivity", "getPacket onFailure")
-//                }
-//
-//            })
+            })
 
     }
 
@@ -112,8 +100,12 @@ class PacketActivity : AppCompatActivity() {
         }
     }
 
-    override fun startActivityForResult(intent: Intent?, requestCode: Int) {
-        super.startActivityForResult(intent, requestCode)
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        Log.d("onActivityResult","called")
+        getData()
 
     }
 

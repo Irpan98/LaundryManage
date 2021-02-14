@@ -1,5 +1,6 @@
 package id.itborneo.laundrymanage.transaction
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,12 +16,13 @@ class TransactionAdapter(val clickListener: (TransactionModel) -> Unit) :
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
+        @SuppressLint("SetTextI18n")
         fun bind(data: TransactionModel) {
             itemView.apply {
-                tvIdTransaction.text = data.id.toString()
-                tvProgressStatus.text = data.progress_status
-                tvTotalPrice.text = data.totalPrice?.toRupiah()
-                tvPaymentStatus.text = data.payment_status
+                tvIdTransaction.text = "TR${data.id.toString()}"
+                tvProgressStatus.text = data.status_progress
+                tvTotalPrice.text = data.total_price?.toRupiah()
+                tvPaymentStatus.text = data.status_payment
                 tvCustomerName.text = data.customer_name
 
                 setOnClickListener {

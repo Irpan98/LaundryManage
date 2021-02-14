@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiClient {
 
-    private const val IP_ADDRESS = "192.168.43.46"
+    private const val IP_ADDRESS = "192.168.1.7"
     private const val API_BASE = "http://$IP_ADDRESS/laundryManage/"
 
     fun create(): ApiServices {

@@ -23,7 +23,7 @@ class OutliteActivity : AppCompatActivity() {
 
 
         initRecyclerview()
-        observerData()
+//        observerData()
     }
 
     private fun initRecyclerview() {
@@ -34,27 +34,27 @@ class OutliteActivity : AppCompatActivity() {
         rvOutline.layoutManager = LinearLayoutManager(this)
     }
 
-    private fun observerData() {
-        ApiClient.create()
-            .getOutline().enqueue(object : Callback<OutliteResponse> {
-                override fun onResponse(
-                    call: Call<OutliteResponse>,
-                    response: Response<OutliteResponse>
-                ) {
-                    val list = response.body()?.data
-                    if (list != null) {
-                        adapter.list = list
-                        adapter.notifyDataSetChanged()
-                    } else {
-                        Log.d("OutliteActivity", "list is null")
-                    }
-                }
-
-                override fun onFailure(call: Call<OutliteResponse>, t: Throwable) {
-                    Log.d("OutliteActivity", "getOutline onFailure")
-                }
-
-            })
-
-    }
+//    private fun observerData() {
+//        ApiClient.create()
+//            .getOutline().enqueue(object : Callback<OutliteResponse> {
+//                override fun onResponse(
+//                    call: Call<OutliteResponse>,
+//                    response: Response<OutliteResponse>
+//                ) {
+//                    val list = response.body()?.data
+//                    if (list != null) {
+//                        adapter.list = list
+//                        adapter.notifyDataSetChanged()
+//                    } else {
+//                        Log.d("OutliteActivity", "list is null")
+//                    }
+//                }
+//
+//                override fun onFailure(call: Call<OutliteResponse>, t: Throwable) {
+//                    Log.d("OutliteActivity", "getOutline onFailure")
+//                }
+//
+//            })
+//
+//    }
 }

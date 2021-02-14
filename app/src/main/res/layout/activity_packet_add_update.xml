@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:paddingHorizontal="12dp"
-    android:paddingVertical="10dp"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
     android:orientation="vertical"
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="10dp"
     tools:context=".packet.PacketAddUpdateActivity">
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:paddingBottom="4dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nama Packet"
+        android:paddingBottom="4dp"
         app:startIconDrawable="@drawable/ic_add"
         app:startIconTint="@color/colorPrimary">
 
@@ -32,15 +32,16 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="4dp"
         android:hint="Harga"
-        app:startIconDrawable="@drawable/ic_add"
+        android:paddingBottom="4dp"
+        app:startIconDrawable="@drawable/ic_rp"
         app:startIconTint="@color/colorPrimary">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="number"
             android:textColor="@color/textColor" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -48,10 +49,10 @@
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:paddingBottom="4dp"
         android:layout_height="wrap_content"
         android:hint="Catatan"
-        app:startIconDrawable="@drawable/ic_add"
+        android:paddingBottom="4dp"
+        app:startIconDrawable="@drawable/ic_note"
         app:startIconTint="@color/colorPrimary">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -62,18 +63,39 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnAddUpdate"
-        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:paddingTop="8dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_marginHorizontal="8dp"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:text="Tambah Data"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        app:icon="@drawable/ic_add"
-        app:iconTint="@android:color/white" />
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDelete"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:backgroundTint="@color/colorNo"
+            android:text="Hapus Paket"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:icon="@drawable/ic_delete"
+            app:iconTint="@android:color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddUpdate"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Tambah Paket"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:icon="@drawable/ic_add"
+            app:iconTint="@android:color/white" />
+
+    </RelativeLayout>
+
+
 </LinearLayout>
